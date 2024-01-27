@@ -5,8 +5,10 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
-include('../resources/css/style.css');
-include('../resources/views/layout.blade.php');
+echo "DIR : ".__DIR__;
+
+include(__DIR__ . '/resources/css/style.css');
+include(__DIR__ . '/resources/views/layout.blade.php');
 
 /*
 |--------------------------------------------------------------------------
