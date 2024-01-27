@@ -1,0 +1,13 @@
+@startuml
+interface Foo {}
+class Service {}
+class Swapi extends Service {
+ #url: string
+ #querryString: array
+ +__call(name: string, arguments: array): self
+ +search(search: string): self
+ +page(page: int): self
+ +wookiee(): self
+ +get(): mixed
+}
+@enduml

@@ -1,0 +1,994 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/user
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer gVh8PDa53dZe1v4cEfba66k'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/movies
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Permet de récupérer la liste complète des films.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer h64d58VfZka1gDcvb36EeaP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/movies
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Permet d'enregistrer un nouveau film."
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: xyzrcgushpfyus
+        type: string
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: true
+        example: 'Minima similique est modi veniam quo nostrum et.'
+        type: string
+        custom: []
+      duration:
+        name: duration
+        description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 18000.'
+        required: true
+        example: 18
+        type: integer
+        custom: []
+      release:
+        name: release
+        description: '5h max. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: true
+        example: '2022-12-01'
+        type: string
+        custom: []
+      director_id:
+        name: director_id
+        description: ''
+        required: false
+        example: 15
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      name: xyzrcgushpfyus
+      description: 'Minima similique est modi veniam quo nostrum et.'
+      duration: 18
+      release: '2022-12-01'
+      director_id: 15
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer V8ga1aZ436feEbk65hvDcdP'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/movies/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Permet de récupérer un film.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the movie.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer ca5663hvE1fbaPZe84dgDVk'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/movies/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Permet de mettre à jour un film.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the movie.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: ux
+        type: string
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: false
+        example: 'Cum voluptatem earum magni suscipit.'
+        type: string
+        custom: []
+      duration:
+        name: duration
+        description: 'La valeur de value doit être supérieure ou égale à 0. La valeur de value ne peut pas être supérieure à 18000.'
+        required: false
+        example: 21
+        type: integer
+        custom: []
+      release:
+        name: release
+        description: '5 heures max. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: false
+        example: '2022-12-01'
+        type: string
+        custom: []
+      director_id:
+        name: director_id
+        description: ''
+        required: false
+        example: 17
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      name: ux
+      description: 'Cum voluptatem earum magni suscipit.'
+      duration: 21
+      release: '2022-12-01'
+      director_id: 17
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer bv8c64Eh356akVgdPf1aDZe'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/movies/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Permet de supprimer un film.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the movie.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer hkD1v5a8ac6Zed4f3PbgE6V'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/actors
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Permet de récupérer la liste complète des acteurs.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3Za8V6g1EDPh5cavb6kfde4'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/actors
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Permet d'enregistrer un nouvel acteur."
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: wpg
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: wpg
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Ph3k641dVZEgc6vbfaDae85'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/actors/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Permet de récupérer un acteur.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the actor.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 86fEkagcdh34vPVD1e5bZ6a'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/actors/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Permet de mettre à jour un acteur.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the actor.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: hhzvgmzlasorszsuzudbzn
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: hhzvgmzlasorszsuzudbzn
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 68b5Z6eckaP3hfEv1dV4Dag'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/actors/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Permet de supprimer un acteur.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the actor.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer f6Z15k4bVePDa63acdg8hvE'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/directors
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Permet de récupérer la liste complète des réalisateurs.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer Z6aE3D6hdbkv854VePagfc1'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/directors
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Permet d'enregistrer un nouveau réalisateur."
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: true
+        example: fhnvvcpqqvhiabojnqfv
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: fhnvvcpqqvhiabojnqfv
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer D8d3Evb6fhc5P6a1ek4gZVa'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/directors/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Permet de récupérer un réalisateur.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the director.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer D54kP3cgbvV18a6aZde6hEf'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/directors/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Permet de mettre à jour un réalisateur.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the director.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Le texte de value ne peut pas contenir plus de 255 caractères.'
+        required: false
+        example: dkeizzfmd
+        type: string
+        custom: []
+    cleanBodyParameters:
+      name: dkeizzfmd
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3be61hkvPfD4Ecg685daVaZ'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/directors/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Permet de supprimer un réalisateur.'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the director.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer v31ba5kDg468VEhePdfa6cZ'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/movies/{movie_id}/actors'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      movie_id:
+        name: movie_id
+        description: 'The ID of the movie.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      movie_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer a8vcb1hd3D6fek45ZV6PEga'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/movies/{movie_id}/director'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      movie_id:
+        name: movie_id
+        description: 'The ID of the movie.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      movie_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer k4cVv6f6ZED8Pegd3h51aab'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/movies/{movie_id}/actors'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      movie_id:
+        name: movie_id
+        description: 'The ID of the movie.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      movie_id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      actor_id:
+        name: actor_id
+        description: ''
+        required: true
+        example: 13
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      actor_id: 13
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer c186vb6a5h4fDkZ3PedVgaE'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/swapi
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"oaoohuwhao":36,"whwokao":"acaoaoakc:\/\/cohraakah.wawoho\/raakah\/caorarccacahakc\/?akrarrwo=3&wwoorcscraao=ohooooorahwowo","akrcwohoahoohuc":"acaoaoakc:\/\/cohraakah.wawoho\/raakah\/caorarccacahakc\/?akrarrwo=1&wwoorcscraao=ohooooorahwowo","rcwochuanaoc":[{"whrascwo":"Sanrahowo 1","scoowawoan":"Fahrcwocakrcraro-31-oaanracc akraaorcooan rawhwa raaoaoraoaor","scrawhhuwwraoaaohurcworc":"Khuraao Srocaowoscc Ewhrrahwhwoworcahwhrr","oaoocao_ahwh_oarcwowaahaoc":"huwhorwhooohwh","anwowhrraoac":"21.5","scrak_raaoscoocakacworcahwhrr_cakwowowa":"1000","oarcwooh":"1","akraccwowhrrworcc":"6","oararcrroo_oaraakraoaahaoro":"70000","oaoowhchuscrarhanwoc":"1 scoowhaoac","acroakworcwarcahhowo_rcraaoahwhrr":"3.0","MGLT":"70","caorarccacahak_oaanracc":"Praaorcooan oarcrawwao","akahanooaoc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/akwoooakanwo\/22\/"],"wwahanscc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/2\/","acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/5\/"],"oarcworaaowowa":"2014-12-15T13:00:56.332000Z","wowaahaowowa":"2014-12-20T21:23:49.897000Z","hurcan":"acaoaoakc:\/\/cohraakah.wawoho\/raakah\/caorarccacahakc\/21\/"},{"whrascwo":"Iscakworcahraan cachuaoaoanwo","scoowawoan":"Lrascrhwara-oaanracc T-4ra cachuaoaoanwo","scrawhhuwwraoaaohurcworc":"Sahwowhrarc Fanwowoao Srocaowoscc","oaoocao_ahwh_oarcwowaahaoc":"240000","anwowhrraoac":"20","scrak_raaoscoocakacworcahwhrr_cakwowowa":"850","oarcwooh":"6","akraccwowhrrworcc":"20","oararcrroo_oaraakraoaahaoro":"80000","oaoowhchuscrarhanwoc":"2 scoowhaoacc","acroakworcwarcahhowo_rcraaoahwhrr":"1.0","MGLT":"50","caorarccacahak_oaanracc":"Arcscwowa rroohoworcwhscwowhao aorcrawhcakoorcao","akahanooaoc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/akwoooakanwo\/1\/","acaoaoakc:\/\/cohraakah.wawoho\/raakah\/akwoooakanwo\/13\/","acaoaoakc:\/\/cohraakah.wawoho\/raakah\/akwoooakanwo\/14\/"],"wwahanscc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/2\/","acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/3\/"],"oarcworaaowowa":"2014-12-15T13:04:47.235000Z","wowaahaowowa":"2014-12-20T21:23:49.900000Z","hurcan":"acaoaoakc:\/\/cohraakah.wawoho\/raakah\/caorarccacahakc\/22\/"},{"whrascwo":"EF76 Nworhhuanoowh-B wocoaoorcao wwrcahrrraaowo","scoowawoan":"EF76 Nworhhuanoowh-B wocoaoorcao wwrcahrrraaowo","scrawhhuwwraoaaohurcworc":"Khuraao Drcahhowo Yrarcwac","oaoocao_ahwh_oarcwowaahaoc":"8500000","anwowhrraoac":"300","scrak_raaoscoocakacworcahwhrr_cakwowowa":"800","oarcwooh":"854","akraccwowhrrworcc":"75","oararcrroo_oaraakraoaahaoro":"6000000","oaoowhchuscrarhanwoc":"2 roworarcc","acroakworcwarcahhowo_rcraaoahwhrr":"2.0","MGLT":"40","caorarccacahak_oaanracc":"Ecoaoorcao cacahak","akahanooaoc":[],"wwahanscc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/2\/","acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/3\/"],"oarcworaaowowa":"2014-12-15T13:06:30.813000Z","wowaahaowowa":"2014-12-20T21:23:49.902000Z","hurcan":"acaoaoakc:\/\/cohraakah.wawoho\/raakah\/caorarccacahakc\/23\/"},{"whrascwo":"Craanrascrarcah Crchuahcworc","scoowawoan":"MC80 Lahrhworcaoro aoroakwo Saorarc Crchuahcworc","scrawhhuwwraoaaohurcworc":"Moowh Craanrascrarcah cacahakrorarcwac","oaoocao_ahwh_oarcwowaahaoc":"104000000","anwowhrraoac":"1200","scrak_raaoscoocakacworcahwhrr_cakwowowa":"wh\/ra","oarcwooh":"5400","akraccwowhrrworcc":"1200","oararcrroo_oaraakraoaahaoro":"huwhorwhooohwh","oaoowhchuscrarhanwoc":"2 roworarcc","acroakworcwarcahhowo_rcraaoahwhrr":"1.0","MGLT":"60","caorarccacahak_oaanracc":"Saorarc Crchuahcworc","akahanooaoc":[],"wwahanscc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/3\/"],"oarcworaaowowa":"2014-12-18T10:54:57.804000Z","wowaahaowowa":"2014-12-20T21:23:49.904000Z","hurcan":"acaoaoakc:\/\/cohraakah.wawoho\/raakah\/caorarccacahakc\/27\/"},{"whrascwo":"A-ohahwhrr","scoowawoan":"RZ-1 A-ohahwhrr Iwhaoworcoawoakaooorc","scrawhhuwwraoaaohurcworc":"Aananahrawhoawo Uwhwaworcrrrcoohuwhwa Ewhrrahwhwoworcahwhrr, Iwhoaoosc Coorcakoorcraaoahoowh","oaoocao_ahwh_oarcwowaahaoc":"175000","anwowhrraoac":"9.6","scrak_raaoscoocakacworcahwhrr_cakwowowa":"1300","oarcwooh":"1","akraccwowhrrworcc":"0","oararcrroo_oaraakraoaahaoro":"40","oaoowhchuscrarhanwoc":"1 ohwowoor","acroakworcwarcahhowo_rcraaoahwhrr":"1.0","MGLT":"120","caorarccacahak_oaanracc":"Saorarcwwahrracaoworc","akahanooaoc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/akwoooakanwo\/29\/"],"wwahanscc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/3\/"],"oarcworaaowowa":"2014-12-18T11:16:34.542000Z","wowaahaowowa":"2014-12-20T21:23:49.907000Z","hurcan":"acaoaoakc:\/\/cohraakah.wawoho\/raakah\/caorarccacahakc\/28\/"},{"whrascwo":"B-ohahwhrr","scoowawoan":"A\/SF-01 B-ohahwhrr caorarcwwahrracaoworc","scrawhhuwwraoaaohurcworc":"Sanrarowh & Koorcakahan","oaoocao_ahwh_oarcwowaahaoc":"220000","anwowhrraoac":"16.9","scrak_raaoscoocakacworcahwhrr_cakwowowa":"950","oarcwooh":"1","akraccwowhrrworcc":"0","oararcrroo_oaraakraoaahaoro":"45","oaoowhchuscrarhanwoc":"1 ohwowoor","acroakworcwarcahhowo_rcraaoahwhrr":"2.0","MGLT":"91","caorarccacahak_oaanracc":"Accrahuanao Saorarcwwahrracaoworc","akahanooaoc":[],"wwahanscc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/3\/"],"oarcworaaowowa":"2014-12-18T11:18:04.763000Z","wowaahaowowa":"2014-12-20T21:23:49.909000Z","hurcan":"acaoaoakc:\/\/cohraakah.wawoho\/raakah\/caorarccacahakc\/29\/"},{"whrascwo":"Rwoakhurhanahoa Crchuahcworc","scoowawoan":"Coowhchuanrarc-oaanracc oarchuahcworc","scrawhhuwwraoaaohurcworc":"Coorcwoananahrawh Ewhrrahwhwoworcahwhrr Coorcakoorcraaoahoowh","oaoocao_ahwh_oarcwowaahaoc":"huwhorwhooohwh","anwowhrraoac":"115","scrak_raaoscoocakacworcahwhrr_cakwowowa":"900","oarcwooh":"9","akraccwowhrrworcc":"16","oararcrroo_oaraakraoaahaoro":"huwhorwhooohwh","oaoowhchuscrarhanwoc":"huwhorwhooohwh","acroakworcwarcahhowo_rcraaoahwhrr":"2.0","MGLT":"huwhorwhooohwh","caorarccacahak_oaanracc":"Sakraoawo oarchuahcworc","akahanooaoc":[],"wwahanscc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/4\/"],"oarcworaaowowa":"2014-12-19T17:01:31.488000Z","wowaahaowowa":"2014-12-20T21:23:49.912000Z","hurcan":"acaoaoakc:\/\/cohraakah.wawoho\/raakah\/caorarccacahakc\/31\/"},{"whrascwo":"Drcooahwa oaoowhaorcooan cacahak","scoowawoan":"Lhuoarcwoachuanor-oaanracc Drcooahwa Coowhaorcooan Sacahak","scrawhhuwwraoaaohurcworc":"Hooworccoaac-Kwoccwoan Drcahhowo, Iwhoa.","oaoocao_ahwh_oarcwowaahaoc":"huwhorwhooohwh","anwowhrraoac":"3170","scrak_raaoscoocakacworcahwhrr_cakwowowa":"wh\/ra","oarcwooh":"175","akraccwowhrrworcc":"139000","oararcrroo_oaraakraoaahaoro":"4000000000","oaoowhchuscrarhanwoc":"500 wararoc","acroakworcwarcahhowo_rcraaoahwhrr":"2.0","MGLT":"huwhorwhooohwh","caorarccacahak_oaanracc":"Drcooahwa oaoowhaorcooan cacahak","akahanooaoc":[],"wwahanscc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/4\/","acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/5\/","acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/6\/"],"oarcworaaowowa":"2014-12-19T17:04:06.323000Z","wowaahaowowa":"2014-12-20T21:23:49.915000Z","hurcan":"acaoaoakc:\/\/cohraakah.wawoho\/raakah\/caorarccacahakc\/32\/"},{"whrascwo":"Nrarhoooo wwahrracaoworc","scoowawoan":"N-1 caorarcwwahrracaoworc","scrawhhuwwraoaaohurcworc":"Tacwowowa Praanraoawo Sakraoawo Vwoccwoan Ewhrrahwhwoworcahwhrr Coorcakc","oaoocao_ahwh_oarcwowaahaoc":"200000","anwowhrraoac":"11","scrak_raaoscoocakacworcahwhrr_cakwowowa":"1100","oarcwooh":"1","akraccwowhrrworcc":"0","oararcrroo_oaraakraoaahaoro":"65","oaoowhchuscrarhanwoc":"7 wararoc","acroakworcwarcahhowo_rcraaoahwhrr":"1.0","MGLT":"huwhorwhooohwh","caorarccacahak_oaanracc":"Saorarcwwahrracaoworc","akahanooaoc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/akwoooakanwo\/11\/","acaoaoakc:\/\/cohraakah.wawoho\/raakah\/akwoooakanwo\/35\/","acaoaoakc:\/\/cohraakah.wawoho\/raakah\/akwoooakanwo\/60\/"],"wwahanscc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/4\/","acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/5\/"],"oarcworaaowowa":"2014-12-19T17:39:17.582000Z","wowaahaowowa":"2014-12-20T21:23:49.917000Z","hurcan":"acaoaoakc:\/\/cohraakah.wawoho\/raakah\/caorarccacahakc\/39\/"},{"whrascwo":"Nrarhoooo Roororaan Saorarccacahak","scoowawoan":"J-aoroakwo 327 Nhurhahrawh rcoororaan caorarccacahak","scrawhhuwwraoaaohurcworc":"Tacwowowa Praanraoawo Sakraoawo Vwoccwoan Ewhrrahwhwoworcahwhrr Coorcakc, Nhurhahra Saorarc Drcahhowoc","oaoocao_ahwh_oarcwowaahaoc":"huwhorwhooohwh","anwowhrraoac":"76","scrak_raaoscoocakacworcahwhrr_cakwowowa":"920","oarcwooh":"8","akraccwowhrrworcc":"huwhorwhooohwh","oararcrroo_oaraakraoaahaoro":"huwhorwhooohwh","oaoowhchuscrarhanwoc":"huwhorwhooohwh","acroakworcwarcahhowo_rcraaoahwhrr":"1.8","MGLT":"huwhorwhooohwh","caorarccacahak_oaanracc":"roraoaacao","akahanooaoc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/akwoooakanwo\/39\/"],"wwahanscc":["acaoaoakc:\/\/cohraakah.wawoho\/raakah\/wwahanscc\/4\/"],"oarcworaaowowa":"2014-12-19T17:45:03.506000Z","wowaahaowowa":"2014-12-20T21:23:49.919000Z","hurcan":"acaoaoakc:\/\/cohraakah.wawoho\/raakah\/caorarccacahakc\/40\/"}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 5k3dave1fh68DPg6EZ4bcVa'
+    controller: null
+    method: null
+    route: null
+    custom: []
